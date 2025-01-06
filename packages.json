@@ -1,0 +1,89 @@
+{
+    "publisher": "OpenSemanticWorld",
+    "publisherURL": "https://github.com/OpenSemanticWorld-Packages/world.opensemantic.characteristics.basic",
+    "author": [
+        "Simon Stier"
+    ],
+    "language": "en",
+    "licenseName": "CC BY-NC 4.0",
+    "packages": {
+        "OSW Basic Characteristics": {
+            "globalID": "world.opensemantic.characteristics.basic",
+            "label": "OSW Basic Characteristics",
+            "description": "Contains fundamental qualities",
+            "version": "0.1.0",
+            "requiredPackages": [
+                "world.opensemantic.core"
+            ],
+            "baseURL": "https://raw.githubusercontent.com/OpenSemanticWorld-Packages/world.opensemantic.characteristics.basic/main/base/",
+            "pages": [
+                {
+                    "name": "OSW93ccae36243542ceac6c951450a81d47",
+                    "label": "Characteristic",
+                    "namespace": "NS_CATEGORY",
+                    "urlPath": "Category/OSW93ccae36243542ceac6c951450a81d47.slot_main.wikitext",
+                    "slots": {
+                        "footer": {
+                            "urlPath": "Category/OSW93ccae36243542ceac6c951450a81d47.slot_footer.wikitext"
+                        },
+                        "header": {
+                            "urlPath": "Category/OSW93ccae36243542ceac6c951450a81d47.slot_header.wikitext"
+                        },
+                        "jsondata": {
+                            "urlPath": "Category/OSW93ccae36243542ceac6c951450a81d47.slot_jsondata.json"
+                        },
+                        "jsonschema": {
+                            "urlPath": "Category/OSW93ccae36243542ceac6c951450a81d47.slot_jsonschema.json"
+                        }
+                    }
+                },
+                {
+                    "name": "OSWffe74f291d354037b318c422591c5023",
+                    "label": "CharacteristicType",
+                    "namespace": "NS_CATEGORY",
+                    "urlPath": "Category/OSWffe74f291d354037b318c422591c5023.slot_main.wikitext",
+                    "slots": {
+                        "footer": {
+                            "urlPath": "Category/OSWffe74f291d354037b318c422591c5023.slot_footer.wikitext"
+                        },
+                        "footer_template": {
+                            "urlPath": "Category/OSWffe74f291d354037b318c422591c5023.slot_footer_template.wikitext"
+                        },
+                        "header": {
+                            "urlPath": "Category/OSWffe74f291d354037b318c422591c5023.slot_header.wikitext"
+                        },
+                        "jsondata": {
+                            "urlPath": "Category/OSWffe74f291d354037b318c422591c5023.slot_jsondata.json"
+                        },
+                        "jsonschema": {
+                            "urlPath": "Category/OSWffe74f291d354037b318c422591c5023.slot_jsonschema.json"
+                        },
+                        "schema_template": {
+                            "urlPath": "Category/OSWffe74f291d354037b318c422591c5023.slot_schema_template.text"
+                        }
+                    }
+                },
+                {
+                    "name": "OSW6ef70c808fb54abbbacb059c285713d4",
+                    "label": "OntologyRelated",
+                    "namespace": "NS_CATEGORY",
+                    "urlPath": "Category/OSW6ef70c808fb54abbbacb059c285713d4.slot_main.wikitext",
+                    "slots": {
+                        "footer": {
+                            "urlPath": "Category/OSW6ef70c808fb54abbbacb059c285713d4.slot_footer.wikitext"
+                        },
+                        "header": {
+                            "urlPath": "Category/OSW6ef70c808fb54abbbacb059c285713d4.slot_header.wikitext"
+                        },
+                        "jsondata": {
+                            "urlPath": "Category/OSW6ef70c808fb54abbbacb059c285713d4.slot_jsondata.json"
+                        },
+                        "jsonschema": {
+                            "urlPath": "Category/OSW6ef70c808fb54abbbacb059c285713d4.slot_jsonschema.json"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
