@@ -111,7 +111,7 @@
                 "type": "string",
                 "format": "autocomplete",
                 "$comment": "range MetaCharacteristic, subclass_of range Characteristic",
-                "range": "OSWffe74f291d354037b318c422591c5023",
+                "range": "Category:OSWffe74f291d354037b318c422591c5023",
                 "subclassof_range": "Category:OSW93ccae36243542ceac6c951450a81d47"
             }
         },
@@ -358,9 +358,10 @@
                                 }
                             },
                             "type": {
-                                "title": "Type",
+                                "title": "Literal Data Type",
                                 "title*": {
-                                    "de": "Typ"
+                                    "en": "Data Type",
+                                    "de": "Datentyp"
                                 },
                                 "description": "Datatype of the property. Note: For subobjects you need to create a separate Characteristic and refer to it",
                                 "description*": {
@@ -373,7 +374,6 @@
                                     "number",
                                     "boolean"
                                 ],
-                                "default": "string",
                                 "options": {
                                     "enum_titles": [
                                         "textual data or link (string)",
@@ -400,10 +400,10 @@
                             },
                             "range": {
                                 "type": "array",
-                                "title": "Value range",
+                                "title": "Autocomplet value range",
                                 "description": "Enables autocomplete support by lookup all elements that are at least in one of the listed categories. Currently only a single category is supprted.",
                                 "title*": {
-                                    "de": "Wertebereich"
+                                    "de": "Wertebereich für Auto-Vervollständigung"
                                 },
                                 "description*": {
                                     "de": "Ermöglicht die Unterstützung der automatischen Vervollständigung durch Nachschlagen aller Elemente, die mindestens in einer der aufgeführten Kategorien enthalten sind. Derzeit wird nur eine einzelne Kategorie unterstützt."
@@ -506,13 +506,14 @@
                                 "type": "string",
                                 "format": "autocomplete",
                                 "$comment": "range MetaCharacteristic, subclass_of range Characteristic for convenience. Should allow also classes in general.",
-                                "range": "OSWffe74f291d354037b318c422591c5023",
+                                "range": "Category:OSWffe74f291d354037b318c422591c5023",
                                 "subclassof_range": "Category:OSW93ccae36243542ceac6c951450a81d47",
                                 "#range": "Category:Category",
                                 "#subclassof_range": "Category:Item"
                             },
                             "rdf_property": {
-                                "range": "Category:ObjectProperty"
+                                "range": "Category:ObjectProperty",
+                                "default": "Property:HasCharacteristic"
                             }
                         }
                     }
