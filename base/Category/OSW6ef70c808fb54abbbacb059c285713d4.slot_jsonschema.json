@@ -3,8 +3,9 @@
         "/wiki/Category:OSW93ccae36243542ceac6c951450a81d47?action=raw&slot=jsonschema",
         {
             "exact_ontology_match": "owl:sameAs",
-            "exact_ontology_match*": "Property:Equivalent_URI",
-            "exact_ontology_match**": "Property:HasExactOntologyMatch",
+            "exact_ontology_match*": "skos:exactMatch",
+            "exact_ontology_match**": "Property:Equivalent_URI",
+            "exact_ontology_match***": "Property:HasExactOntologyMatch",
             "close_ontology_match": "skos:closeMatch",
             "close_ontology_match*": "Property:HasCloseOntologyMatch"
         }

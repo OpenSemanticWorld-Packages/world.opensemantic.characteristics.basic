@@ -20,8 +20,7 @@
         "de": "Elementarer Baustein für Objekt-Datenschema. Kann Attribute von anderen Charakteristiken erben, übernehmen und/oder eigene definieren. Attribute können als Werte sowohl Literale als auch komplexe Objekte haben die von anderen Charakteristiken beschrieben werden.  "
     },
     "required": [
-        "type",
-        "uuid"
+        "type"
     ],
     "properties": {
         "type": {
@@ -49,14 +48,6 @@
             "default": [
                 "Category:OSW93ccae36243542ceac6c951450a81d47"
             ],
-            "options": {
-                "hidden": true
-            }
-        },
-        "uuid": {
-            "title": "UUID",
-            "type": "string",
-            "format": "uuid",
             "options": {
                 "hidden": true
             }

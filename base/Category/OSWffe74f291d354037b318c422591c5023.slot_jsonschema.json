@@ -1,23 +1,12 @@
 {
     "@context": [
-        "/wiki/Category:Category?action=raw&slot=jsonschema",
-        "/wiki/Category:OSW6ef70c808fb54abbbacb059c285713d4?action=raw&slot=jsonschema",
         {
-            "qb": "http://purl.org/linked-data/cube#",
-            "dimensions": {
-                "@id:": "qb:component",
-                "@context": {
-                    "property": "qb:dimension"
-                }
+            "subclass_of": {
+                "@id": "rdfs:subClassOf",
+                "@type": "@id"
             },
-            "measures": {
-                "@id:": "qb:component",
-                "@context": {
-                    "property": "qb:measure"
-                }
-            },
-            "properties": {
-                "@id": "Property:HasProperty",
+            "subclass_of*": {
+                "@id": "Property:SubClassOf",
                 "@type": "@id"
             },
             "characteristics": {
@@ -27,15 +16,17 @@
             "characteristic": {
                 "@id": "Property:HasCharacteristic",
                 "@type": "@id"
+            },
+            "properties": {
+                "@id": "Property:HasProperty",
+                "@type": "@id"
             }
-        }
+        },
+        "/wiki/Category:Entity?action=raw&slot=jsonschema"
     ],
     "allOf": [
         {
-            "$ref": "/wiki/Category:Category?action=raw&slot=jsonschema"
-        },
-        {
-            "$ref": "/wiki/Category:OSW6ef70c808fb54abbbacb059c285713d4?action=raw&slot=jsonschema"
+            "$ref": "/wiki/Category:Entity?action=raw&slot=jsonschema"
         }
     ],
     "type": "object",
@@ -88,8 +79,8 @@
                 "type": "string",
                 "format": "autocomplete",
                 "$comment": "range MetaCharacteristic, subclass_of range Characteristic",
-                "range": "Category:Category",
-                "subclassof_range": "Category:Item"
+                "range": "Category:OSWffe74f291d354037b318c422591c5023",
+                "subclassof_range": "Category:OSW93ccae36243542ceac6c951450a81d47"
             },
             "default": [
                 "Category:OSW93ccae36243542ceac6c951450a81d47"
