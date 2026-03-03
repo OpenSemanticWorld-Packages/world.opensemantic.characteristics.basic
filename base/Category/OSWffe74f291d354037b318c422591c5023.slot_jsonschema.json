@@ -333,380 +333,351 @@
                 },
                 "oneOf": [
                     {
-                        "title": "PrimitiveProperty",
+                        "title": "NumberProperty",
                         "title*": {
-                            "de": "Einfaches Attribut"
+                            "de": "Zahlenwert-Attribut"
                         },
-                        "description": "Attribute with a primitive data type, such as text, numerical values, or links",
+                        "description": "Attribute for numerical values (integers or decimals)",
                         "description*": {
-                            "de": "Attribut mit einem primitiven Datentyp, wie etwa Text, Zahlenwerte oder Verweise"
+                            "de": "Attribut für Zahlenwerte (ganze Zahlen oder Dezimalzahlen)"
                         },
                         "required": [
-                            "property_type"
+                            "type"
                         ],
                         "defaultProperties": [],
                         "properties": {
-                            "property_type": {
+                            "type": {
+                                "title": "Number Type",
+                                "title*": {
+                                    "de": "Zahlentyp"
+                                },
+                                "description": "Type of number: whole numbers or decimals",
+                                "description*": {
+                                    "de": "Zahlentyp: ganze Zahlen oder Dezimalzahlen"
+                                },
                                 "type": "string",
                                 "enum": [
-                                    "PrimitiveProperty",
-                                    "SimpleProperty"
+                                    "number",
+                                    "integer"
                                 ],
-                                "default": "PrimitiveProperty",
+                                "default": "number",
+                                "options": {
+                                    "enum_titles": [
+                                        "Decimals (number)",
+                                        "Whole numbers (integer)"
+                                    ],
+                                    "enum_titles*": {
+                                        "de": [
+                                            "Dezimalzahlen (number)",
+                                            "Ganze Zahlen (integer)"
+                                        ]
+                                    }
+                                }
+                            },
+                            "minimum": {
+                                "title": "Minimum",
+                                "title*": {
+                                    "de": "Minimum"
+                                },
+                                "description": "Minimum allowed value (inclusive)",
+                                "description*": {
+                                    "de": "Minimal erlaubter Wert (einschließlich)"
+                                },
+                                "type": "number"
+                            },
+                            "maximum": {
+                                "title": "Maximum",
+                                "title*": {
+                                    "de": "Maximum"
+                                },
+                                "description": "Maximum allowed value (inclusive)",
+                                "description*": {
+                                    "de": "Maximal erlaubter Wert (einschließlich)"
+                                },
+                                "type": "number"
+                            },
+                            "exclusive_minimum": {
+                                "title": "Exclusive minimum",
+                                "title*": {
+                                    "de": "Exklusives Minimum"
+                                },
+                                "description": "Value must be strictly greater than this",
+                                "description*": {
+                                    "de": "Wert muss strikt größer als dieser sein"
+                                },
+                                "type": "number"
+                            },
+                            "exclusive_maximum": {
+                                "title": "Exclusive maximum",
+                                "title*": {
+                                    "de": "Exklusives Maximum"
+                                },
+                                "description": "Value must be strictly less than this",
+                                "description*": {
+                                    "de": "Wert muss strikt kleiner als dieser sein"
+                                },
+                                "type": "number"
+                            },
+                            "multiple_of": {
+                                "title": "Multiple of",
+                                "title*": {
+                                    "de": "Vielfaches von"
+                                },
+                                "description": "Value must be a multiple of this number (e.g., step size)",
+                                "description*": {
+                                    "de": "Wert muss ein Vielfaches dieser Zahl sein (z. B. Schrittweite)"
+                                },
+                                "type": "number",
+                                "exclusiveMinimum": 0
+                            },
+                            "enum": {
+                                "title": "Allowed values",
+                                "title*": {
+                                    "de": "Erlaubte Werte"
+                                },
+                                "description": "Predefined list of allowed numerical values",
+                                "description*": {
+                                    "de": "Vordefinierte Liste erlaubter Zahlenwerte"
+                                },
+                                "type": "array",
+                                "items": {
+                                    "type": "number"
+                                }
+                            },
+                            "default": {
+                                "title": "Default value",
+                                "title*": {
+                                    "de": "Standardwert"
+                                },
+                                "description": "Default value for this property",
+                                "description*": {
+                                    "de": "Standardwert für dieses Attribut"
+                                },
+                                "type": "number"
+                            }
+                        }
+                    },
+                    {
+                        "title": "TextProperty",
+                        "title*": {
+                            "de": "Text-Attribut"
+                        },
+                        "description": "Attribute for textual values",
+                        "description*": {
+                            "de": "Attribut für Textwerte"
+                        },
+                        "required": [
+                            "type"
+                        ],
+                        "defaultProperties": [],
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "const": "string",
+                                "default": "string",
                                 "options": {
                                     "hidden": "true"
                                 }
+                            },
+                            "format": {
+                                "title": "Format",
+                                "title*": {
+                                    "de": "Format"
+                                },
+                                "description": "Display and validation format for string values",
+                                "description*": {
+                                    "de": "Anzeige- und Validierungsformat für Textwerte"
+                                },
+                                "type": "string",
+                                "enum": [
+                                    "date",
+                                    "date-time",
+                                    "time",
+                                    "email",
+                                    "uri",
+                                    "color"
+                                ],
+                                "options": {
+                                    "enum_titles": [
+                                        "Date (date)",
+                                        "Date and time (date-time)",
+                                        "Time (time)",
+                                        "Email (email)",
+                                        "URI (uri)",
+                                        "Color (color)"
+                                    ],
+                                    "enum_titles*": {
+                                        "de": [
+                                            "Datum (date)",
+                                            "Datum und Uhrzeit (date-time)",
+                                            "Uhrzeit (time)",
+                                            "E-Mail (email)",
+                                            "URI (uri)",
+                                            "Farbe (color)"
+                                        ]
+                                    }
+                                }
+                            },
+                            "pattern": {
+                                "title": "Regular expression",
+                                "title*": {
+                                    "de": "Regulärer Ausdruck"
+                                },
+                                "description": "A regular expression pattern the value must match",
+                                "description*": {
+                                    "de": "Ein regulärer Ausdruck, dem der Wert entsprechen muss"
+                                },
+                                "type": "string"
+                            },
+                            "min_length": {
+                                "title": "Minimum length",
+                                "title*": {
+                                    "de": "Mindestlänge"
+                                },
+                                "description": "Minimum number of characters",
+                                "description*": {
+                                    "de": "Mindestanzahl von Zeichen"
+                                },
+                                "type": "integer",
+                                "minimum": 0
+                            },
+                            "max_length": {
+                                "title": "Maximum length",
+                                "title*": {
+                                    "de": "Maximallänge"
+                                },
+                                "description": "Maximum number of characters",
+                                "description*": {
+                                    "de": "Maximale Anzahl von Zeichen"
+                                },
+                                "type": "integer",
+                                "minimum": 0
+                            },
+                            "enum": {
+                                "title": "Allowed values",
+                                "title*": {
+                                    "de": "Erlaubte Werte"
+                                },
+                                "description": "Predefined list of allowed values",
+                                "description*": {
+                                    "de": "Vordefinierte Liste erlaubter Werte"
+                                },
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "default": {
+                                "title": "Default value",
+                                "title*": {
+                                    "de": "Standardwert"
+                                },
+                                "description": "Default value for this property",
+                                "description*": {
+                                    "de": "Standardwert für dieses Attribut"
+                                },
+                                "type": "string"
                             }
+                        }
+                    },
+                    {
+                        "title": "BooleanProperty",
+                        "title*": {
+                            "de": "Wahrheitswert-Attribut"
                         },
-                        "oneOf": [
-                            {
-                                "title": "NumberProperty",
+                        "description": "Attribute for true/false values",
+                        "description*": {
+                            "de": "Attribut für Wahrheitswerte (wahr/falsch)"
+                        },
+                        "required": [
+                            "type"
+                        ],
+                        "defaultProperties": [],
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "const": "boolean",
+                                "default": "boolean",
+                                "options": {
+                                    "hidden": "true"
+                                }
+                            },
+                            "default": {
+                                "title": "Default value",
                                 "title*": {
-                                    "de": "Zahlenwert-Attribut"
+                                    "de": "Standardwert"
                                 },
-                                "description": "Attribute for numerical values (integers or decimals)",
+                                "description": "Default value for this property",
                                 "description*": {
-                                    "de": "Attribut für Zahlenwerte (ganze Zahlen oder Dezimalzahlen)"
+                                    "de": "Standardwert für dieses Attribut"
                                 },
-                                "required": [
-                                    "type"
-                                ],
-                                "defaultProperties": [],
-                                "properties": {
-                                    "type": {
-                                        "title": "Number Type",
-                                        "title*": {
-                                            "de": "Zahlentyp"
-                                        },
-                                        "description": "Type of number: whole numbers or decimals",
-                                        "description*": {
-                                            "de": "Zahlentyp: ganze Zahlen oder Dezimalzahlen"
-                                        },
-                                        "type": "string",
-                                        "enum": [
-                                            "number",
-                                            "integer"
-                                        ],
-                                        "default": "number",
-                                        "options": {
-                                            "enum_titles": [
-                                                "Decimals (number)",
-                                                "Whole numbers (integer)"
-                                            ],
-                                            "enum_titles*": {
-                                                "de": [
-                                                    "Dezimalzahlen (number)",
-                                                    "Ganze Zahlen (integer)"
-                                                ]
-                                            }
+                                "type": "boolean",
+                                "format": "checkbox"
+                            }
+                        }
+                    },
+                    {
+                        "title": "LinkProperty",
+                        "title*": {
+                            "de": "Verweis-Attribut"
+                        },
+                        "description": "Attribute that links to another entity via autocomplete",
+                        "description*": {
+                            "de": "Attribut, das über Autovervollständigung auf eine andere Entität verweist"
+                        },
+                        "required": [
+                            "type"
+                        ],
+                        "defaultProperties": [],
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "const": "iri",
+                                "default": "iri",
+                                "options": {
+                                    "hidden": "true"
+                                }
+                            },
+                            "range": {
+                                "title": "Autocomplete value range",
+                                "title*": {
+                                    "de": "Wertebereich für Auto-Vervollständigung"
+                                },
+                                "description": "Enables autocomplete support by looking up all elements that are in at least one of the listed categories. Currently only a single category is supported.",
+                                "description*": {
+                                    "de": "Ermöglicht die Unterstützung der automatischen Vervollständigung durch Nachschlagen aller Elemente, die mindestens in einer der aufgeführten Kategorien enthalten sind. Derzeit wird nur eine einzelne Kategorie unterstützt."
+                                },
+                                "type": "array",
+                                "maxItems": 1,
+                                "items": {
+                                    "type": "string",
+                                    "format": "autocomplete",
+                                    "range": "Category:Category",
+                                    "subclassof_range": "Category:Item",
+                                    "options": {
+                                        "autocomplete": {
+                                            "query": "[[:Category:%2B]]"
                                         }
-                                    },
-                                    "minimum": {
-                                        "title": "Minimum",
-                                        "title*": {
-                                            "de": "Minimum"
-                                        },
-                                        "description": "Minimum allowed value (inclusive)",
-                                        "description*": {
-                                            "de": "Minimal erlaubter Wert (einschließlich)"
-                                        },
-                                        "type": "number"
-                                    },
-                                    "maximum": {
-                                        "title": "Maximum",
-                                        "title*": {
-                                            "de": "Maximum"
-                                        },
-                                        "description": "Maximum allowed value (inclusive)",
-                                        "description*": {
-                                            "de": "Maximal erlaubter Wert (einschließlich)"
-                                        },
-                                        "type": "number"
-                                    },
-                                    "exclusive_minimum": {
-                                        "title": "Exclusive minimum",
-                                        "title*": {
-                                            "de": "Exklusives Minimum"
-                                        },
-                                        "description": "Value must be strictly greater than this",
-                                        "description*": {
-                                            "de": "Wert muss strikt größer als dieser sein"
-                                        },
-                                        "type": "number"
-                                    },
-                                    "exclusive_maximum": {
-                                        "title": "Exclusive maximum",
-                                        "title*": {
-                                            "de": "Exklusives Maximum"
-                                        },
-                                        "description": "Value must be strictly less than this",
-                                        "description*": {
-                                            "de": "Wert muss strikt kleiner als dieser sein"
-                                        },
-                                        "type": "number"
-                                    },
-                                    "multiple_of": {
-                                        "title": "Multiple of",
-                                        "title*": {
-                                            "de": "Vielfaches von"
-                                        },
-                                        "description": "Value must be a multiple of this number (e.g., step size)",
-                                        "description*": {
-                                            "de": "Wert muss ein Vielfaches dieser Zahl sein (z. B. Schrittweite)"
-                                        },
-                                        "type": "number",
-                                        "exclusiveMinimum": 0
-                                    },
-                                    "enum": {
-                                        "title": "Allowed values",
-                                        "title*": {
-                                            "de": "Erlaubte Werte"
-                                        },
-                                        "description": "Predefined list of allowed numerical values",
-                                        "description*": {
-                                            "de": "Vordefinierte Liste erlaubter Zahlenwerte"
-                                        },
-                                        "type": "array",
-                                        "items": {
-                                            "type": "number"
-                                        }
-                                    },
-                                    "default": {
-                                        "title": "Default value",
-                                        "title*": {
-                                            "de": "Standardwert"
-                                        },
-                                        "description": "Default value for this property",
-                                        "description*": {
-                                            "de": "Standardwert für dieses Attribut"
-                                        },
-                                        "type": "number"
                                     }
                                 }
                             },
-                            {
-                                "title": "TextProperty",
-                                "title*": {
-                                    "de": "Text-Attribut"
-                                },
-                                "description": "Attribute for textual values",
+                            "subclassof_range": {
+                                "$comment": "ToDo",
+                                "description": "Allows selecting classes rather than instances",
                                 "description*": {
-                                    "de": "Attribut für Textwerte"
+                                    "de": "Ermöglicht die Auswahl von Klassen anstelle von Instanzen"
                                 },
-                                "required": [
-                                    "type"
-                                ],
-                                "defaultProperties": [],
-                                "properties": {
-                                    "type": {
-                                        "type": "string",
-                                        "const": "string",
-                                        "default": "string",
-                                        "options": {
-                                            "hidden": "true"
-                                        }
-                                    },
-                                    "format": {
-                                        "title": "Format",
-                                        "title*": {
-                                            "de": "Format"
-                                        },
-                                        "description": "Display and validation format for string values",
-                                        "description*": {
-                                            "de": "Anzeige- und Validierungsformat für Textwerte"
-                                        },
-                                        "type": "string",
-                                        "enum": [
-                                            "date",
-                                            "date-time",
-                                            "time",
-                                            "email",
-                                            "uri",
-                                            "color"
-                                        ],
-                                        "options": {
-                                            "enum_titles": [
-                                                "Date (date)",
-                                                "Date and time (date-time)",
-                                                "Time (time)",
-                                                "Email (email)",
-                                                "URI (uri)",
-                                                "Color (color)"
-                                            ],
-                                            "enum_titles*": {
-                                                "de": [
-                                                    "Datum (date)",
-                                                    "Datum und Uhrzeit (date-time)",
-                                                    "Uhrzeit (time)",
-                                                    "E-Mail (email)",
-                                                    "URI (uri)",
-                                                    "Farbe (color)"
-                                                ]
-                                            }
-                                        }
-                                    },
-                                    "pattern": {
-                                        "title": "Regular expression",
-                                        "title*": {
-                                            "de": "Regulärer Ausdruck"
-                                        },
-                                        "description": "A regular expression pattern the value must match",
-                                        "description*": {
-                                            "de": "Ein regulärer Ausdruck, dem der Wert entsprechen muss"
-                                        },
-                                        "type": "string"
-                                    },
-                                    "min_length": {
-                                        "title": "Minimum length",
-                                        "title*": {
-                                            "de": "Mindestlänge"
-                                        },
-                                        "description": "Minimum number of characters",
-                                        "description*": {
-                                            "de": "Mindestanzahl von Zeichen"
-                                        },
-                                        "type": "integer",
-                                        "minimum": 0
-                                    },
-                                    "max_length": {
-                                        "title": "Maximum length",
-                                        "title*": {
-                                            "de": "Maximallänge"
-                                        },
-                                        "description": "Maximum number of characters",
-                                        "description*": {
-                                            "de": "Maximale Anzahl von Zeichen"
-                                        },
-                                        "type": "integer",
-                                        "minimum": 0
-                                    },
-                                    "enum": {
-                                        "title": "Allowed values",
-                                        "title*": {
-                                            "de": "Erlaubte Werte"
-                                        },
-                                        "description": "Predefined list of allowed values",
-                                        "description*": {
-                                            "de": "Vordefinierte Liste erlaubter Werte"
-                                        },
-                                        "type": "array",
-                                        "items": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "default": {
-                                        "title": "Default value",
-                                        "title*": {
-                                            "de": "Standardwert"
-                                        },
-                                        "description": "Default value for this property",
-                                        "description*": {
-                                            "de": "Standardwert für dieses Attribut"
-                                        },
-                                        "type": "string"
-                                    }
+                                "options": {
+                                    "hidden": true
                                 }
                             },
-                            {
-                                "title": "BooleanProperty",
-                                "title*": {
-                                    "de": "Wahrheitswert-Attribut"
-                                },
-                                "description": "Attribute for true/false values",
-                                "description*": {
-                                    "de": "Attribut für Wahrheitswerte (wahr/falsch)"
-                                },
-                                "required": [
-                                    "type"
-                                ],
-                                "defaultProperties": [],
-                                "properties": {
-                                    "type": {
-                                        "type": "string",
-                                        "const": "boolean",
-                                        "default": "boolean",
-                                        "options": {
-                                            "hidden": "true"
-                                        }
-                                    },
-                                    "default": {
-                                        "title": "Default value",
-                                        "title*": {
-                                            "de": "Standardwert"
-                                        },
-                                        "description": "Default value for this property",
-                                        "description*": {
-                                            "de": "Standardwert für dieses Attribut"
-                                        },
-                                        "type": "boolean",
-                                        "format": "checkbox"
-                                    }
-                                }
-                            },
-                            {
-                                "title": "LinkProperty",
-                                "title*": {
-                                    "de": "Verweis-Attribut"
-                                },
-                                "description": "Attribute that links to another entity via autocomplete",
-                                "description*": {
-                                    "de": "Attribut, das über Autovervollständigung auf eine andere Entität verweist"
-                                },
-                                "required": [
-                                    "type"
-                                ],
-                                "defaultProperties": [],
-                                "properties": {
-                                    "type": {
-                                        "type": "string",
-                                        "const": "iri",
-                                        "default": "iri",
-                                        "options": {
-                                            "hidden": "true"
-                                        }
-                                    },
-                                    "range": {
-                                        "title": "Autocomplete value range",
-                                        "title*": {
-                                            "de": "Wertebereich für Auto-Vervollständigung"
-                                        },
-                                        "description": "Enables autocomplete support by looking up all elements that are in at least one of the listed categories. Currently only a single category is supported.",
-                                        "description*": {
-                                            "de": "Ermöglicht die Unterstützung der automatischen Vervollständigung durch Nachschlagen aller Elemente, die mindestens in einer der aufgeführten Kategorien enthalten sind. Derzeit wird nur eine einzelne Kategorie unterstützt."
-                                        },
-                                        "type": "array",
-                                        "maxItems": 1,
-                                        "items": {
-                                            "type": "string",
-                                            "format": "autocomplete",
-                                            "range": "Category:Category",
-                                            "subclassof_range": "Category:Item",
-                                            "options": {
-                                                "autocomplete": {
-                                                    "query": "[[:Category:%2B]]"
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "subclassof_range": {
-                                        "$comment": "ToDo",
-                                        "description": "Allows selecting classes rather than instances",
-                                        "description*": {
-                                            "de": "Ermöglicht die Auswahl von Klassen anstelle von Instanzen"
-                                        },
-                                        "options": {
-                                            "hidden": true
-                                        }
-                                    },
-                                    "query": {
-                                        "$comment": "This will allow complex expressions like '(A & B) | C' in the future",
-                                        "options": {
-                                            "hidden": true
-                                        }
-                                    }
+                            "query": {
+                                "$comment": "This will allow complex expressions like '(A & B) | C' in the future",
+                                "options": {
+                                    "hidden": true
                                 }
                             }
-                        ]
+                        }
                     },
                     {
                         "title": "ComplexProperty",
@@ -719,17 +690,14 @@
                             "de": "Attribut, das auf ein Subobjekt verweist, das durch eine andere Charakteristik oder Klasse definiert ist"
                         },
                         "required": [
-                            "property_type",
+                            "type",
                             "characteristic"
                         ],
                         "properties": {
-                            "property_type": {
+                            "type": {
                                 "type": "string",
-                                "enum": [
-                                    "ComplexProperty",
-                                    "CharacteristicDimension"
-                                ],
-                                "default": "ComplexProperty",
+                                "const": "object",
+                                "default": "object",
                                 "options": {
                                     "hidden": "true"
                                 }
