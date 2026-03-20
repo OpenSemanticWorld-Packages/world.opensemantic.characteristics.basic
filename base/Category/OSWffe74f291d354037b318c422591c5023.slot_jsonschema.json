@@ -43,7 +43,8 @@
     },
     "required": [
         "type",
-        "subclass_of"
+        "subclass_of",
+        "label"
     ],
     "defaultProperties": [
         "characteristics",
@@ -51,9 +52,22 @@
     ],
     "properties": {
         "type": {
+            "items": {
+                "format": "autocomplete",
+                "subclassof_range": "Category:OSWffe74f291d354037b318c422591c5023",
+                "$comment": "Explicit query because subclassof_range does not include the specified category itself. Includes 5 levels of SubClassOf depth.",
+                "options": {
+                    "autocomplete": {
+                        "query": "[[:Category:OSWffe74f291d354037b318c422591c5023]] OR [[SubClassOf::Category:OSWffe74f291d354037b318c422591c5023]] OR [[SubClassOf.SubClassOf::Category:OSWffe74f291d354037b318c422591c5023]] OR [[SubClassOf.SubClassOf.SubClassOf::Category:OSWffe74f291d354037b318c422591c5023]] OR [[SubClassOf.SubClassOf.SubClassOf.SubClassOf::Category:OSWffe74f291d354037b318c422591c5023]] OR [[SubClassOf.SubClassOf.SubClassOf.SubClassOf.SubClassOf::Category:OSWffe74f291d354037b318c422591c5023]]"
+                    }
+                }
+            },
             "default": [
                 "Category:OSWffe74f291d354037b318c422591c5023"
-            ]
+            ],
+            "options": {
+                "collapsed": true
+            }
         },
         "subclass_of": {
             "title": "Supercategories (is a)",
@@ -69,6 +83,7 @@
                 "infoText": "A car is a vehicle"
             },
             "type": "array",
+            "format": "table",
             "propertyOrder": -1009,
             "items": {
                 "title": "Category",
@@ -86,6 +101,9 @@
                 "Category:OSW93ccae36243542ceac6c951450a81d47"
             ],
             "minItems": 1
+        },
+        "label": {
+            "propertyOrder": -1009
         },
         "characteristics": {
             "title": "Characteristics (mixin)",
@@ -628,7 +646,9 @@
                         "required": [
                             "type"
                         ],
-                        "defaultProperties": [],
+                        "defaultProperties": [
+                            "range"
+                        ],
                         "properties": {
                             "type": {
                                 "type": "string",
