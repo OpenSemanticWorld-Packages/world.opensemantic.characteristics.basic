@@ -10,7 +10,7 @@
         "OSW Basic Characteristics": {
             "globalID": "world.opensemantic.characteristics.basic",
             "label": "OSW Basic Characteristics",
-            "description": "Contains fundamental qualities",
+            "description": "ARCHIVED: Merged into world.opensemantic.core. All pages are now maintained there.",
             "version": "0.2.0",
             "requiredPackages": [
                 "world.opensemantic.core"
